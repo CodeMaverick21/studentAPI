@@ -31,3 +31,9 @@ def create_student(student : StudentCreate, db : Session = Depends(get_db)):
     db.refresh(new_student)
 
     return new_student
+
+#Get - get all students
+@router.get("/", response_model = List[StudentResponse], status_code=200)
+def get_all_students(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+    students = db.query(Student).offset(skip).limit(limit).all()
+    return students
