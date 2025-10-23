@@ -12,7 +12,7 @@ app = FastAPI(
 )
 
 # Include routers
-app.include_router(students.router)
+app.include_router(student.router)
 
 
 @app.get("/")
