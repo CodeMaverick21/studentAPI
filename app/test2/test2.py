@@ -1,0 +1,1 @@
+# command + j is a shortcut to comment or uncomment a line of code
